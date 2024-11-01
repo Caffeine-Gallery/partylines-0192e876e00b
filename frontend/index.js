@@ -43,7 +43,196 @@ const questions = [
             }
         ]
     },
-    // Additional questions can be added here
+    {
+        id: 'education-1',
+        topic: 'Education',
+        text: 'What approach should be taken for education funding?',
+        options: [
+            {
+                text: 'Increase federal funding for public education',
+                alignment: { democrat: 80, republican: 20, independent: 60 }
+            },
+            {
+                text: 'Maintain current funding levels with reforms',
+                alignment: { democrat: 50, republican: 50, independent: 70 }
+            },
+            {
+                text: 'Implement school choice and voucher systems',
+                alignment: { democrat: 20, republican: 80, independent: 50 }
+            }
+        ]
+    },
+    {
+        id: 'immigration-1',
+        topic: 'Immigration',
+        text: 'What should be the approach to immigration policy?',
+        options: [
+            {
+                text: 'Path to citizenship for undocumented immigrants',
+                alignment: { democrat: 85, republican: 15, independent: 55 }
+            },
+            {
+                text: 'Stricter border control and enforcement',
+                alignment: { democrat: 20, republican: 80, independent: 45 }
+            },
+            {
+                text: 'Merit-based immigration system',
+                alignment: { democrat: 40, republican: 60, independent: 70 }
+            }
+        ]
+    },
+    {
+        id: 'climate-1',
+        topic: 'Climate Change',
+        text: 'How should the government address climate change?',
+        options: [
+            {
+                text: 'Aggressive regulations and investment in renewable energy',
+                alignment: { democrat: 90, republican: 10, independent: 60 }
+            },
+            {
+                text: 'Market-based solutions like carbon pricing',
+                alignment: { democrat: 60, republican: 40, independent: 75 }
+            },
+            {
+                text: 'Minimal intervention, focus on adaptation',
+                alignment: { democrat: 10, republican: 90, independent: 40 }
+            }
+        ]
+    },
+    {
+        id: 'gun-control-1',
+        topic: 'Gun Control',
+        text: 'What approach should be taken on gun control?',
+        options: [
+            {
+                text: 'Strict gun control laws',
+                alignment: { democrat: 85, republican: 15, independent: 50 }
+            },
+            {
+                text: 'Moderate regulations with focus on background checks',
+                alignment: { democrat: 60, republican: 40, independent: 70 }
+            },
+            {
+                text: 'Minimal restrictions on gun ownership',
+                alignment: { democrat: 10, republican: 90, independent: 45 }
+            }
+        ]
+    },
+    {
+        id: 'taxes-1',
+        topic: 'Taxation',
+        text: 'What should be the approach to taxation?',
+        options: [
+            {
+                text: 'Progressive tax system with higher rates for wealthy',
+                alignment: { democrat: 90, republican: 10, independent: 55 }
+            },
+            {
+                text: 'Flat tax rate for all income levels',
+                alignment: { democrat: 20, republican: 80, independent: 50 }
+            },
+            {
+                text: 'Lower overall tax rates with fewer deductions',
+                alignment: { democrat: 30, republican: 70, independent: 60 }
+            }
+        ]
+    },
+    {
+        id: 'foreign-policy-1',
+        topic: 'Foreign Policy',
+        text: 'What should be the primary focus of U.S. foreign policy?',
+        options: [
+            {
+                text: 'Multilateral cooperation and diplomacy',
+                alignment: { democrat: 80, republican: 20, independent: 65 }
+            },
+            {
+                text: 'Strong military presence and intervention when necessary',
+                alignment: { democrat: 30, republican: 70, independent: 50 }
+            },
+            {
+                text: 'Non-interventionism and focus on domestic issues',
+                alignment: { democrat: 40, republican: 60, independent: 75 }
+            }
+        ]
+    },
+    {
+        id: 'social-security-1',
+        topic: 'Social Security',
+        text: 'How should Social Security be managed in the future?',
+        options: [
+            {
+                text: 'Expand benefits and increase funding through taxes',
+                alignment: { democrat: 85, republican: 15, independent: 55 }
+            },
+            {
+                text: 'Maintain current system with minor adjustments',
+                alignment: { democrat: 60, republican: 40, independent: 70 }
+            },
+            {
+                text: 'Privatize Social Security or offer optional personal accounts',
+                alignment: { democrat: 10, republican: 90, independent: 45 }
+            }
+        ]
+    },
+    {
+        id: 'minimum-wage-1',
+        topic: 'Minimum Wage',
+        text: 'What should be done with the federal minimum wage?',
+        options: [
+            {
+                text: 'Significantly increase the federal minimum wage',
+                alignment: { democrat: 90, republican: 10, independent: 60 }
+            },
+            {
+                text: 'Modest increases tied to inflation',
+                alignment: { democrat: 70, republican: 30, independent: 75 }
+            },
+            {
+                text: 'Eliminate the federal minimum wage',
+                alignment: { democrat: 5, republican: 95, independent: 30 }
+            }
+        ]
+    },
+    {
+        id: 'criminal-justice-1',
+        topic: 'Criminal Justice',
+        text: 'How should the criminal justice system be reformed?',
+        options: [
+            {
+                text: 'Focus on rehabilitation and reduce incarceration rates',
+                alignment: { democrat: 85, republican: 15, independent: 60 }
+            },
+            {
+                text: 'Maintain current system with minor reforms',
+                alignment: { democrat: 40, republican: 60, independent: 55 }
+            },
+            {
+                text: 'Tougher sentences and increased law enforcement funding',
+                alignment: { democrat: 20, republican: 80, independent: 45 }
+            }
+        ]
+    },
+    {
+        id: 'abortion-1',
+        topic: 'Abortion',
+        text: 'What should be the legal status of abortion?',
+        options: [
+            {
+                text: 'Legal in all or most circumstances',
+                alignment: { democrat: 90, republican: 10, independent: 60 }
+            },
+            {
+                text: 'Legal with some restrictions',
+                alignment: { democrat: 60, republican: 40, independent: 70 }
+            },
+            {
+                text: 'Illegal in all or most circumstances',
+                alignment: { democrat: 10, republican: 90, independent: 40 }
+            }
+        ]
+    }
 ];
 
 let currentQuestionIndex = 0;
@@ -77,6 +266,7 @@ function loadQuestion() {
                 </button>
             `).join('')}
         </div>
+        <div id="alignment-feedback" class="alignment-feedback hidden"></div>
     `;
 
     container.querySelectorAll('.option-button').forEach(button => {
@@ -103,6 +293,8 @@ async function selectAnswer(optionIndex) {
         }
     });
 
+    showAlignmentFeedback(answer.alignment);
+
     setTimeout(async () => {
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
@@ -111,7 +303,20 @@ async function selectAnswer(optionIndex) {
             await showResults();
         }
         updateProgress();
-    }, 500);
+    }, 2000);
+}
+
+function showAlignmentFeedback(alignment) {
+    const feedbackElement = document.getElementById('alignment-feedback');
+    feedbackElement.innerHTML = `
+        <p>This answer aligns:</p>
+        <ul>
+            <li>${alignment.democrat}% with Democratic views</li>
+            <li>${alignment.republican}% with Republican views</li>
+            <li>${alignment.independent}% with Independent views</li>
+        </ul>
+    `;
+    feedbackElement.classList.remove('hidden');
 }
 
 function updateProgress() {
@@ -164,7 +369,7 @@ function createAlignmentChart(results) {
         data: {
             labels: ['Democratic', 'Republican', 'Independent'],
             datasets: [{
-                label: 'Policy Alignment (%)',
+                label: 'Overall Policy Alignment (%)',
                 data: [
                     results.democrat,
                     results.republican,

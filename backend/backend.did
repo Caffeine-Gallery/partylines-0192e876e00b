@@ -4,8 +4,20 @@ type SurveyResult =
    independent: float64;
    republican: float64;
  };
+type DetailedSurveyResult = 
+ record {
+   overallAlignment: SurveyResult;
+   topicAlignments: vec record {
+                          text;
+                          SurveyResult;
+                        };
+ };
 service : {
-  getAllSurveyResults: () -> (vec SurveyResult) query;
+  getAllSurveyResults: () -> (vec DetailedSurveyResult) query;
   getAverageResults: () -> (SurveyResult) query;
-  saveSurveyResults: (SurveyResult) -> ();
+  getAverageResultsByTopic: () -> (vec record {
+                                         text;
+                                         SurveyResult;
+                                       }) query;
+  saveSurveyResults: (DetailedSurveyResult) -> ();
 }
