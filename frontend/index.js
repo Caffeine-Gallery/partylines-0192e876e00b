@@ -260,5 +260,6 @@ function restartSurvey() {
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('start-survey-btn').addEventListener('click', startSurvey);
+    document.getElementById('landing-start-survey-btn').addEventListener('click', startSurvey);
     document.getElementById('restart-survey-btn').addEventListener('click', restartSurvey);
 });
