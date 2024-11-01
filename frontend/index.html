@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PartyLines | Beyond Political Division</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">PartyLines</div>
+            <button class="button button-primary" id="start-survey-btn">Take Survey</button>
+        </div>
+    </nav>
+
+    <section id="landing" class="section">
+        <h1>Welcome to PartyLines</h1>
+        <p>Discover your political alignment through our comprehensive survey.</p>
+    </section>
+
+    <section id="survey" class="section hidden">
+        <div class="survey-container">
+            <div id="question-container" class="question-card">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="results" class="section hidden">
+        <div class="results-container">
+            <div class="results-header">
+                <h2>Your Political Alignment Results</h2>
+                <button class="button button-primary" id="restart-survey-btn">
+                    Take Survey Again
+                </button>
+            </div>
+            <div class="chart-container">
+                <canvas id="alignment-chart"></canvas>
+            </div>
+            <div class="results-grid" id="results-breakdown">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <div id="loading-spinner" class="hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>

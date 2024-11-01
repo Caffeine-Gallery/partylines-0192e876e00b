@@ -1,0 +1,11 @@
+type SurveyResult = 
+ record {
+   democrat: float64;
+   independent: float64;
+   republican: float64;
+ };
+service : {
+  getAllSurveyResults: () -> (vec SurveyResult) query;
+  getAverageResults: () -> (SurveyResult) query;
+  saveSurveyResults: (SurveyResult) -> ();
+}
